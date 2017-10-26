@@ -2,103 +2,112 @@
 <html>
 
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no">
+
     <title>
         提问及资料
     </title>
-    <!-- <link rel='stylesheet' href='/stylesheets/style.css' /> -->
-    <!-- <link href="/css/bootstrap.min.css" rel="stylesheet"> -->
-    <!-- Custom styles for this template -->
-    <!-- <link href="/css/jumbotron.css" rel="stylesheet"> -->
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-        }
-        
-        li {
-            list-style: none;
-        }
-        
-        a {
-            text-decoration: none;
-        }
-        
-        .personal-data {
-            width: 100%;
-            height: 100%;
-            margin: auto;
-        }
-        
-        .Head-portrait {
-            width: 11rem;
-            height: 13rem;
-            background: url(/images/u0.jpg) no-repeat;
-            margin-top: 3rem;
-            margin-left: 3rem;
-        }
-        
-        .data-top {
-            overflow: hidden;
-            border-bottom: 4px solid #ccc;
-        }
-        
-        .head-name>h3 {
-            margin-left: 17rem;
-            font-size: 3.1rem;
-            margin-top: -7rem;
-        }
-        
-        .information {
-            float: right;
-            margin-top: 3rem;
-            margin-right: 3rem;
-        }
-        
-        .information li {
-            padding: 2rem;
-            /* width: 35rem; */
-            height: 4rem;
-        }
-        
-        .information li input {
-            /* width: 35rem; */
-            padding-left: 3rem;
-            height: 4.5rem;
-            font-size: 2.5rem;
-            border: 0;
-            outline: none;
-        }
-        
-        .list {
-            overflow: hidden;
-            padding-bottom: 5rem;
-        }
-        
-        .questions {
-            padding: 3rem;
-            border-bottom: 4px solid #ccc;
-        }
-        
-        .questions ul {
-            padding: 1rem;
-        }
-        
-        .questions h1 {
-            font-size: 3rem;
-        }
-        
-        .questions ul li {
-            line-height: 7rem;
-        }
-        
-        .questions ul li a {
-            font-size: 3rem;
-            color: #ccc;
-        }
-    </style>
+    <link rel="stylesheet" href="/stylesheets/common.css" />
+    <link rel="stylesheet" href="/stylesheets/reset.css">
+
+    <link rel="stylesheet" href="/stylesheets/account.css" />
+    <!-- <link rel="stylesheet" type="text/css" href="/stylesheets/main.css" /> -->
+    <link rel="stylesheet" type="text/css" href="/stylesheets/modal.css" />
+    <script src="https://cdn.bootcss.com/jquery/1.12.1/jquery.min.js"></script>
+    <script src="/javascripts/main.js"></script>
+
 </head>
 
 <body>
+    <div id="header" class="header">
+        <a href=""><img class="logo" src="/images/mountainTop.png" alt=""></a>
+        <ul class="top-nav">
+            <li>
+                <a class="top-btn" id="addBtn" href=""><img src="/images/加号.png" alt=""></a>
+            </li>
+            <li>
+                <a class="top-btn cd-signin" id="accountBtn"><img src="/images/账户.png" alt=""></a>
+            </li>
+            <li>
+                <a class="top-btn" id="search"><img src="/images/放大镜.png" alt="">
+                </a>
+            </li>
+        </ul>
+        <div id="search-box" class="search-box-off">
+            <form action="" method="get" id="searchForm">
+                <input class="search-text" id="search-text" type="text" placeholder="请输入">
+                <input id="search-btn" class="search-btn" value="搜索" type="submit">
+            </form>
+        </div>
+        <div id="account-box" class="account-box-off">
+            <ul id="act-list" class="act-list">
+            </ul>
+        </div>
+        <div class="cd-user-modal">
+            <div class="cd-user-modal-container">
+                <ul class="cd-switcher">
+                    <li><a href="#0">用户登录</a></li>
+                    <li><a href="#0">注册新用户</a></li>
+                </ul>
+
+                <div id="cd-login">
+                    <!-- 登录表单 -->
+                    <form class="cd-form">
+                        <p class="fieldset">
+                            <label class="image-replace cd-username" for="signin-username">用户名</label>
+                            <input class="full-width has-padding has-border" id="signin-username" type="text" placeholder="输入用户名">
+                        </p>
+
+                        <p class="fieldset">
+                            <label class="image-replace cd-password" for="signin-password">密码</label>
+                            <input class="full-width has-padding has-border" id="signin-password" type="text" placeholder="输入密码">
+                        </p>
+
+                        <p class="fieldset">
+                            <input type="checkbox" id="remember-me" checked>
+                            <label for="remember-me">记住登录状态</label>
+                        </p>
+
+                        <p class="fieldset">
+                            <input class="full-width2" type="submit" value="登 录">
+                        </p>
+                    </form>
+                </div>
+
+                <div id="cd-signup">
+                    <!-- 注册表单 -->
+                    <form class="cd-form">
+                        <p class="fieldset">
+                            <label class="image-replace cd-username" for="signup-username">用户名</label>
+                            <input class="full-width has-padding has-border" id="signup-username" type="text" placeholder="输入用户名">
+                        </p>
+
+                        <p class="fieldset">
+                            <label class="image-replace cd-email" for="signup-email">邮箱</label>
+                            <input class="full-width has-padding has-border" id="signup-email" type="email" placeholder="输入mail">
+                        </p>
+
+                        <p class="fieldset">
+                            <label class="image-replace cd-password" for="signup-password">密码</label>
+                            <input class="full-width has-padding has-border" id="signup-password" type="text" placeholder="输入密码">
+                        </p>
+
+                        <p class="fieldset">
+                            <input type="checkbox" id="accept-terms">
+                            <label for="accept-terms">我已阅读并同意 <a href="#0">用户协议</a></label>
+                        </p>
+
+                        <p class="fieldset">
+                            <input class="full-width2" type="submit" value="注册新用户">
+                        </p>
+                    </form>
+                </div>
+
+                <a href="#0" class="cd-close-form">关闭</a>
+            </div>
+        </div>
+
+    </div>
     <div class="personal-data" id="personal-data">
         <div class="data-top">
             <div class="list" type="file" id="touxiang" name="touxiang">
@@ -134,10 +143,12 @@
                 </li>
             </ul>
         </div>
-        <footer class="foooter"></footer>
+        <div id="footer" class="footer">
+            <p>©LEO</p>
+        </div>
     </div>
-    <script src="/javascripts/jquery-1.11.3.min.js"></script>
-    <script src="/javascripts/bootstrap.min.js"></script>
+    <script src="/javascripts/common.js"></script>
+    <!-- <script src="/javascripts/bootstrap.min.js"></script> -->
 </body>
 <!-- <input> -->
 
