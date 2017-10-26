@@ -1,8 +1,48 @@
+*{margin: 0;padding: 0;}
 body {
-  padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
-
 a {
   color: #00B7FF;
+}
+header{
+	height: 3rem;
+	width: 100%;
+	background: green;
+}
+.ask-list{
+	width: 100%;
+	height: auto;
+	padding: 0 1rem;
+}
+.new-ask{
+	width:100%;
+	height: 3rem;
+	border-bottom: 1px solid green;
+	line-height: 3rem;
+}
+.ask{
+	width: 100%;
+	height: 4rem;
+	border-bottom: 1px solid green;
+	padding-top: 1rem;
+}
+.list-left{
+	width: 5%;
+	height: 80%;
+	border-radius: 50%;
+	border: 1px solid green;
+	line-height: 3rem;
+	text-align: center;
+	float: left;
+}
+.list-message{
+	width: 70%;
+	float: left;
+	margin: 1%;
+}
+.list-author,.list-type{
+	float: left;
+	width: 10%;
+	margin-top: 2rem;
 }

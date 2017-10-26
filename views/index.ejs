@@ -1,11 +1,95 @@
 <!DOCTYPE html>
 <html>
   <head>
+  	<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title><%= title %></title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link href="/stylesheets/bootstrap.min.css" rel="stylesheet">
+    <script src="/js/jquery-1.11.3.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
   </head>
   <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
+  	<header></header>
+  	<div class="ask-list">
+  		<div class="new-ask">
+  			<h1>最新提问</h1>
+  		</div>
+  		<div class="ask">
+  			<div class="list-left">Top1</div>
+  			<div class="list-message">标题信息</div>
+  			<div class="list-author">作者</div>
+  			<div class="list-type">分类</div>
+  		</div>
+  	</div>
+  	<div class="container">
+    <!-- 分页条-->
+    <nav>
+        <ul class="pagination">
+        </ul>
+    </nav>
+    <script type="text/javascript">
+        //分页条的Ajax
+        $.get("/getshuoshuoamount", function (result) {
+            var amount = parseInt(result);
+            //总页数
+            pageamount = Math.ceil(amount / 20);
+            for (var i = 0; i < pageamount; i++) {
+                $(".pagination").append("<li><a href='javascript:void(0);'>" + i + "</a></li>");
+            }
+            $(".pagination li:first").addClass("active");
+            //监听
+            $(".pagination li").click(function () {
+                var page = $(this).index();
+                getPage(page);
+                $(this).addClass("active").siblings().removeClass("active");
+            });
+        })
+    </script>
+    <!-- 分页条-->
+    <!-- 20条记录 -->
+    <div class="row" id="quanbushuoshuo">
+				<script>
+						var $quanbushuoshuo = $("#quanbushuoshuo");
+    //得到模板函数
+    var compiled = _.template($("#moban").html());
+
+    getPage(0);
+    //请求分页的说说信息
+    function getPage(page) {
+        //将现在的页面内容清除
+        $("#quanbushuoshuo").html("");
+        $.ajax({
+            "url": "/getallshuoshuo?page=" + page,
+            "type": "get",
+            "success": function (result) {
+                //result是一个数组
+                //console.log(Array.isArray(result));
+                iterator(0);
+                //迭代器
+                function iterator(i) {
+                    if (i == result.length) {
+                        //在这里书写请求完毕之后做的事情
+                        return;  //不用继续迭代了
+                    }
+                    $.get("/getuserinfo?username=" + result[i].username, function (result2) {
+                                //修改字典，给字典增加一项
+                                result[i].avatar = result2.avatar;
+                                //组装模板
+                                var htmlstring = compiled(result[i]);
+                                //添加DOM
+                                $("#quanbushuoshuo").append($(htmlstring));
+                                iterator(i + 1);
+                            }
+                    );
+                }
+            }
+        });
+    }
+				</script>
+    </div>
+    <!-- 20条记录 -->
+</div>
   </body>
 </html>
