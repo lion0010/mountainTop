@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        提问及资料
+    </title>
+    <!-- <link rel='stylesheet' href='/stylesheets/style.css' /> -->
+    <!-- <link href="/css/bootstrap.min.css" rel="stylesheet"> -->
+    <!-- Custom styles for this template -->
+    <!-- <link href="/css/jumbotron.css" rel="stylesheet"> -->
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        li {
+            list-style: none;
+        }
+        
+        a {
+            text-decoration: none;
+        }
+        
+        .personal-data {
+            width: 100%;
+            height: 100%;
+            margin: auto;
+        }
+        
+        .Head-portrait {
+            width: 11rem;
+            height: 13rem;
+            background: url(/images/u0.jpg) no-repeat;
+            margin-top: 3rem;
+            margin-left: 3rem;
+        }
+        
+        .data-top {
+            overflow: hidden;
+            border-bottom: 4px solid #ccc;
+        }
+        
+        .head-name>h3 {
+            margin-left: 17rem;
+            font-size: 3.1rem;
+            margin-top: -7rem;
+        }
+        
+        .information {
+            float: right;
+            margin-top: 3rem;
+            margin-right: 3rem;
+        }
+        
+        .information li {
+            padding: 2rem;
+            /* width: 35rem; */
+            height: 4rem;
+        }
+        
+        .information li input {
+            /* width: 35rem; */
+            padding-left: 3rem;
+            height: 4.5rem;
+            font-size: 2.5rem;
+            border: 0;
+            outline: none;
+        }
+        
+        .list {
+            overflow: hidden;
+            padding-bottom: 5rem;
+        }
+        
+        .questions {
+            padding: 3rem;
+            border-bottom: 4px solid #ccc;
+        }
+        
+        .questions ul {
+            padding: 1rem;
+        }
+        
+        .questions h1 {
+            font-size: 3rem;
+        }
+        
+        .questions ul li {
+            line-height: 7rem;
+        }
+        
+        .questions ul li a {
+            font-size: 3rem;
+            color: #ccc;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="personal-data" id="personal-data">
+        <div class="data-top">
+            <div class="list" type="file" id="touxiang" name="touxiang">
+                <div class="head-name">
+                    <input type="file" class="form-control Head-portrait" id="touxiang" name="touxiang">
+                    <h3>
+                        username
+                    </h3>
+                </div>
+                <ul class="information">
+                    <li><i class="city"><img src="/images/定位.png" alt=""></i><input type="text" placeholder="填写现居城市"></li>
+                    <li><i class="school"><img src="/images/学校1.png" alt=""></i><input type="text" placeholder="填写毕业院校"></li>
+                    <li><i class="company"><img src="/images/公司2.png" alt=""></i><input type="text" placeholder="填写所在公司或组织"></li>
+                    <li><i class="website"><img src="/images/lianjie.png" alt=""></i><input type="text" placeholder="填写个人网站"></li>
+                </ul>
+            </div>
+        </div>
+        <div class="questions">
+            <h1>我的动态</h1>
+            <ul>
+                <li>
+                    <a href="#">回答 0</a>
+                </li>
+
+                <li>
+                    <a href="#">提问 0</a>
+                </li>
+                <li>
+                    <a href="#">关注了 0</a>
+                </li>
+                <li>
+                    <a href="#">粉丝 0</a>
+                </li>
+            </ul>
+        </div>
+        <footer class="foooter"></footer>
+    </div>
+    <script src="/javascripts/jquery-1.11.3.min.js"></script>
+    <script src="/javascripts/bootstrap.min.js"></script>
+</body>
+<!-- <input> -->
+
+</html>
