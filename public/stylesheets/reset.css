@@ -1,0 +1,23 @@
+* {
+    font-size: 16px;
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+a {
+    text-decoration: none;
+    color: #000;
+}
+
+li {
+    list-style: none;
+}
+
+input {
+    outline: none;
+}
