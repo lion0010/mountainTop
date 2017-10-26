@@ -13,6 +13,8 @@
 	</buildSpec>
 	<natures>
 		<nature>com.aptana.projects.webnature</nature>
+	</natures>
+	<filteredResources>
 		<filter>
 			<id>1508912212443</id>
 			<name></name>
