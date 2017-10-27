@@ -8,4 +8,7 @@ router.get('/', function(req, res, next) {
 router.get('/account', (req, res) => {
     res.render("account");
 });
+router.get("/commitAQuestion", function(req, res) {
+    res.render("commitAQuestion");
+})
 module.exports = router;
