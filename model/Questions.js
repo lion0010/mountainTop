@@ -10,6 +10,7 @@ let Schema = new mongoose.Schema({
   down: {type: String},
   comments: [
     {
+    	choose:String,
       author: String,
       created_at: String,
       content: String,

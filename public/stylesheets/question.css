@@ -1,16 +1,39 @@
+
+li{
+	list-style:none;
+	float:left;
+}
+header{
+	height:3rem;
+	width:100%;
+	background-color:red;
+}
 form{
 	width:100%;
 	height:100%;
+	background:#e0f6bf;
 }
-.classify{
-	width:80%;
-	height:3rem;
+/*.classify{
+	width:100%;
+	height:4rem;
 	line-height:3rem;
-	margin-left:10%;
-	margin-top:7%;
+	margin-top:1rem;
 	border:1px solid gray;
 	font-size:2.2rem;
+	background:#e0f6bf;
+}*/
+#status{
+	width:100%;
+	height:3rem;
+	margin-top:1rem;
+	outline:none;
 }
+/*option{
+	width:5rem;
+	height:2rem;
+	background:blue;
+	display:block;
+}*/
 .tag{
 	width:80%;
 	height:3rem;
@@ -19,20 +42,22 @@ form{
 	margin-top:7%;
 	border:1px solid gray;
 	margin-left:10%;
+	outline:none;
 }
 #text{
 	width:80%;
-	height:28rem;
+	height:10rem;
 	margin-top:7%;
 	margin-left:10%;
 	font-size:1.2rem;
 	border:1px solid gray;
+	outline:none;
 }
 
 p{
 	width:100%;
 	height:4rem;
-	border-top:0.2rem solid black;
+	border-top:0.2rem solid #bcdf86;
 	margin-top:5%;
 }
 .send{
@@ -42,6 +67,39 @@ p{
 	margin-top:2%;
 	margin-left:69%;
 	font-size:1.2rem;
-	color:black;
+	color:black;	
+}
+section{
+	background:red;
+	width:100%;
+	height:100%;
+}
+.interisted{
+	width:100%;
+	height:3rem;
+	line-height:3rem;
+	background:white;
+	border-top:0.1px solid limegreen;
 	
+}
+.one{
+	width:100%;
+	height:5rem;
+	line-height:5rem;
+	background:#e0f6bf;
+}
+.two{
+	width:100%;
+	height:5rem;
+	background:#e0f6bf;
+}
+.three{
+	width:100%;
+	height:5rem;
+	background:#e0f6bf;
+}
+.four{
+	width:100%;
+	height:5rem;
+	background:#e0f6bf;
 }

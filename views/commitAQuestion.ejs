@@ -3,30 +3,43 @@
   <head>
     <title>question</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no">
-    <!--<link rel='stylesheet' href='/stylesheets/style.css' />-->
+    <link rel='stylesheet' href='/stylesheets/style.css' />
     <link rel='stylesheet' href='/stylesheets/question.css' />
   </head>
   <body>
-    <form action="" method="post" class="form">
-       <div class="classify">
-       	
-       </div>
-       <input type="text" name="tag" class="tag" placeholder="标题：一句话说清问题"/>
-       <textarea name="content" id="text" cols="30" rows="10">
-       	1.描述你的问题
-       	2.贴上相关代码
-       	3.贴上报错信息
+  	<header></header>
+    <form action="/questions/commitAQuestion" method="post" class="form">
+      <!-- <div class="classify">-->
+          <select id="status" name="title">
+			       <option>科技</option>
+			       <option>人文</option>
+			       <option>娱乐</option>
+			       <option>体育</option>
+			       <option>游戏</option>
+			       <option>历史</option>
+			       <option>军事</option>
+			    </select>    
+      <!-- </div>-->
+       <input type="text" name="title" class="tag" placeholder="标题：一句话说清问题"/>
+       <textarea placeholder="补充说明  (选填)" name="content" id="text" >
        </textarea>
       <p>
        <input type="submit" value="发布问题" class="send">
      </p>
   </form>
-  <script src="../public/javascripts/jquery-3.2.1.js"></script>
+  <section>
+  	<div class="interisted">您可能感兴趣的</div>
+  	<div class="one">iphone吧</div>
+  	<div class="two">ufc吧</div>
+  	<div class="three">游戏吧</div>
+  	<!--<div class="four">4</div>-->
+  </section>
+  <script src="/javascripts/jquery-3.2.1.js"></script>
   <script>
-//	$(".send").click(function(){
-//		//问题传成功，提示上传成功跳转到ask页面
-//		window.location.href="/ask";
-//	})
+      $("select").change(function(){
+      	$(this).css("background-color","#FFFFCC");
+          console.log($(this).val());
+      });
   </script>
   </body>
 </html>
