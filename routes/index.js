@@ -7,6 +7,7 @@ var common = require('../vendor/common');
 router.get('/', function(req, res, next) {
     res.render('index', { title: 'Express' });
 });
+<<<<<<< HEAD
 router.get('/register', function(req, res, next) {
     res.render('register', { title: 'Express' });
 });
@@ -44,4 +45,12 @@ router.post('/register', (req, res) => {
 });
 
 
+=======
+router.get('/account', (req, res) => {
+    res.render("account");
+});
+router.get("/commitAQuestion", function(req, res) {
+    res.render("commitAQuestion");
+})
+>>>>>>> 6955a4e8078673886e571d4cca1f3bbea748fdb5
 module.exports = router;
